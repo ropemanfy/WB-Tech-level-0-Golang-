@@ -24,7 +24,6 @@ func main() {
 	defer pg.Shutdown(ctx)
 
 	database := db.NewDB(pg)
-
 	cache := cache.NewCache(ctx, database)
 
 	nat := subscriber.NewClient(&cfg.Nats)
@@ -36,4 +35,5 @@ func main() {
 	app := fiber.New()
 	appservice := service.NewService(app, cache)
 	appservice.Start(&cfg.App)
+	defer app.Shutdown()
 }

@@ -56,10 +56,6 @@ type Item struct {
 	Status      int    `json:"status"`
 }
 
-func NewModel() *Model {
-	return &Model{}
-}
-
 func (m *Model) Validate() error {
 	validate := validator.New()
 	return validate.Struct(m)

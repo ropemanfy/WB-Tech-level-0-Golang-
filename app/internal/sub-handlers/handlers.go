@@ -20,7 +20,7 @@ func New(db Database, cache Cache) *Handler {
 
 func (h *Handler) MessageHandler(ctx context.Context) stan.MsgHandler {
 	return func(msg *stan.Msg) {
-		model := models.NewModel()
+		var model models.Model
 		insert := func() error {
 			err := json.Unmarshal(msg.Data, &model)
 			if err != nil {
@@ -29,11 +29,11 @@ func (h *Handler) MessageHandler(ctx context.Context) stan.MsgHandler {
 			if err = model.Validate(); err != nil {
 				return err
 			}
-			err = h.db.Create(ctx, *model)
+			err = h.db.Create(ctx, model)
 			if err != nil {
 				return err
 			}
-			err = h.cache.Create(ctx, *model)
+			err = h.cache.Create(ctx, model)
 			if err != nil {
 				return err
 			}

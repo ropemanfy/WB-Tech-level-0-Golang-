@@ -1,6 +1,6 @@
 {
-  "order_uid": "3245eb7b2b84b6test",
-  "track_number": "WBILMTESTTRACKUWU",
+  "order_uid": "y776feb7b2b84b6test",
+  "track_number": "BBBWBILMTESTTRACK",
   "entry": "WBIL",
   "delivery": {
     "name": "Test Testov",
@@ -12,7 +12,7 @@
     "email": "test@gmail.com"
   },
   "payment": {
-    "transaction": "3245eb7b2b84b6test",
+    "transaction": "y776feb7b2b84b6test",
     "request_id": "",
     "currency": "USD",
     "provider": "wbpay",
@@ -25,8 +25,8 @@
   },
   "items": [
     {
-      "chrt_id": 1134930,
-      "track_number": "WBILMTESTTRACKUWU",
+      "chrt_id": 7734930,
+      "track_number": "BBBWBILMTESTTRACK",
       "price": 453,
       "rid": "ab4219087a764ae0btest",
       "name": "Mascaras",
